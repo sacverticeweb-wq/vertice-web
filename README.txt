@@ -14,3 +14,10 @@ Mudanças principais:
 - Assets de mídia não utilizados da Torque 12 removidos para reduzir drasticamente o pacote.
 
 Abra index.html para visualizar.
+
+
+SPARK / WESAFE INTEGRADO
+- A home inclui uma seção exclusiva #spark-live.
+- O sistema é carregado diretamente de https://wesafe-c7kg.onrender.com em um iframe.
+- O iframe permite geolocalização, fullscreen e clipboard quando o navegador/origem HTTPS conceder permissão.
+- Há botões de recarregar, tela cheia e abrir em nova guia como fallback.

@@ -783,3 +783,47 @@
   requestSceneUpdate();
 
 })();
+
+
+// Dedicated Spark / WeSafe embedded experience.
+(() => {
+  const frame = document.getElementById('sparkAppFrame');
+  const boot = document.getElementById('sparkAppBoot');
+  const reload = document.getElementById('sparkReload');
+  const fullscreen = document.getElementById('sparkFullscreen');
+  const shell = document.getElementById('sparkAppShell');
+  if (!frame || !shell) return;
+
+  let bootTimer = 0;
+  const showBoot = () => {
+    if (!boot) return;
+    clearTimeout(bootTimer);
+    boot.classList.remove('is-hidden');
+  };
+  const hideBoot = () => {
+    if (!boot) return;
+    clearTimeout(bootTimer);
+    bootTimer = setTimeout(() => boot.classList.add('is-hidden'), 420);
+  };
+
+  frame.addEventListener('load', hideBoot);
+  // Avoid leaving a permanent loading layer if the remote service is slow/asleep.
+  setTimeout(hideBoot, 9000);
+
+  reload?.addEventListener('click', () => {
+    showBoot();
+    const src = frame.getAttribute('src');
+    frame.setAttribute('src', 'about:blank');
+    requestAnimationFrame(() => requestAnimationFrame(() => frame.setAttribute('src', src || 'https://wesafe-c7kg.onrender.com')));
+    setTimeout(hideBoot, 9000);
+  });
+
+  fullscreen?.addEventListener('click', async () => {
+    try {
+      if (!document.fullscreenElement) await shell.requestFullscreen?.();
+      else await document.exitFullscreen?.();
+    } catch (_) {
+      window.open('https://wesafe-c7kg.onrender.com', '_blank', 'noopener');
+    }
+  });
+})();
