@@ -1,0 +1,57 @@
+VÉRTICE WEB V7 — RELATÓRIO DE QA
+================================
+
+ESCOPO
+Revisão da home Vértice Web + 5 projetos demonstrativos internos.
+Objetivos: corrigir medida/quebra dos textos, remover Nuvé, transformar Vértice Lab em Live Viewer real, criar processo Cobalto com foco por scroll/blur, adicionar ícones sociais contextuais e reduzir custo de renderização em mobile.
+
+ALTERAÇÕES CONFIRMADAS
+- Nuvé removido da home, Lab, estrutura de projetos e posters.
+- 5 cards de portfólio apontando para projetos internos existentes.
+- 5 opções do Vértice Lab: Moda, Hamburgueria, Barbearia, Pet shop e Automotivo.
+- Lab aponta para os próprios index.html das demos e possui poster WebP de fallback.
+- Lab carrega sob demanda via IntersectionObserver e mantém apenas um projeto ativo por vez.
+- Alternância Desktop/Mobile preservada no Lab e nos viewers do portfólio.
+- Geometria tipográfica revisada na home e proteções de medida adicionadas às cinco demos.
+- Cobalto possui 4 etapas de processo guiadas por scroll e foco por proximidade ao centro da viewport.
+- Cobalto possui fallback de prefers-reduced-motion sem blur/transforms.
+- Blur do Cobalto reduzido em telas pequenas.
+- Blur de superfícies glass da home reduzido abaixo de 720px.
+- Ícones de WhatsApp/Instagram inseridos somente em CTAs/áreas em que o canal faz sentido.
+- Arquivos duplicados antigos do Cobalto removidos.
+- Parâmetros de imagens externas reduzidos onde possível para aliviar transferência.
+- Diretório antigo de vídeo/frames do Torque 12 removido após confirmar 0 referências no HTML/CSS/JS ativo.
+- Assets antigos sem referência foram removidos antes do empacotamento final.
+
+QA ESTÁTICO — PASSOU
+- Páginas HTML detectadas: 7 (home + 5 demos + CRM local já presente no pacote)
+- Arquivos CSS detectados: 7
+- Arquivos JavaScript detectados: 7
+- Referências/caminhos locais verificados: 48
+- Arquivos locais faltando: 0
+- Âncoras internas quebradas: 0
+- Erros de parsing CSS (tinycss2): 0
+- Falhas de sintaxe JavaScript (node --check): 0
+- Links únicos de projetos na home: 5
+- Opções de segmento no Lab: 5
+- Caminhos de iframe do Lab existentes: 5/5
+- Posters do Lab existentes: 5/5
+- Etapas data-method-step no Cobalto: 4
+- Referências a Nuvé no código-fonte da home/demos: 0
+- Atributos SVG viewBox com caixa incorreta: 0
+- Arquivos “copy” antigos em projetos: 0
+
+RESPONSIVIDADE / GEOMETRIA
+- Home possui contenção de medida para títulos, parágrafos, CTAs e conteúdo do portfólio.
+- Breakpoints específicos do Lab: 1100px, 720px e 390px.
+- Cinco demos receberam regra de geometria segura para conteúdo principal.
+- Cobalto possui ajustes específicos em 900px e 520px para o processo animado.
+- O efeito de blur do Cobalto é reduzido no mobile e removido com prefers-reduced-motion.
+
+LIMITAÇÃO DO AMBIENTE DE QA
+O Chromium disponível neste ambiente está sob política gerenciada que bloqueia navegação para URLs, inclusive localhost/file. Por isso, nesta rodada não foi possível afirmar um teste visual automatizado real em Chromium sem contornar uma política do ambiente. Nenhuma tentativa de burlar essa política foi feita.
+
+Para compensar, foram repetidas as validações estáticas de caminhos, âncoras, CSS, JavaScript, estrutura dos Live Viewers, breakpoints e arquivos de mídia. Ainda é recomendado abrir o pacote publicado por HTTPS em um celular físico e em um desktop antes da publicação definitiva, principalmente porque algumas demos usam imagens externas.
+
+STATUS
+PASSOU em todas as verificações estáticas descritas acima.

@@ -1,0 +1,14 @@
+BRANDING — Torque 12 Garage — Premium Rework
+
+Nicho: Oficina automotiva
+Slogan: Mecânica sem enrolação.
+Conceito visual: Industrial tecnológico + performance automotiva cinematográfica. HUDs, grids, scans, telemetria, painéis, cortes angulares e fotografia real em alto contraste.
+Paleta: #080A0C · #D7FF29 · #B4C0C6 · #11161B
+Tipografia: Barlow Condensed (display) + IBM Plex Mono (diagnóstico/HUD)
+Tom de comunicação: Direto, técnico, transparente e objetivo.
+Movimento: scroll reveal lento, parallax suave, scan lights, hover magnético, tilt sutil e progressões de diagnóstico.
+Posicionamento: marca fictícia criada como projeto demonstrativo para o portfólio da Vértice Web.
+Telefone demonstrativo: (XX) XXXXX-XXXX
+
+Observação: depoimentos, indicadores, valores e demais dados desta demo são composições visuais, não alegações de resultados reais.
+Imagens: fotografia automotiva demonstrativa via Unsplash.
