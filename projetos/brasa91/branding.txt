@@ -1,0 +1,16 @@
+BRANDING — BRASA 91
+
+Nicho: Hamburgueria artesanal
+Slogan: Fogo, ponto e personalidade.
+Conceito: Dark premium, fogo, chapa e cultura urbana.
+Paleta: #090A09 · #FF6500 · #F4EADB
+Tipografia: Arial/Helvetica pesada + detalhes monospace
+Tom de comunicação: Direto, apetitoso, irreverente sem infantilizar
+Posicionamento: marca fictícia criada como projeto demonstrativo para o portfólio da Vértice Web.
+Telefone demonstrativo: (XX) XXXXX-XXXX
+
+Observação: depoimentos, valores, endereço e demais dados desta demo são composições visuais, não alegações de resultados reais.
+
+IMAGENS
+As fotografias são carregadas remotamente do CDN da Unsplash em resoluções responsivas e alta qualidade.
+Isso reduz o peso do ZIP e permite que o navegador entregue a resolução adequada para cada tela.

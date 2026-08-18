@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0a09" />
+  <meta name="description" content="BRASA 91 — smash burgers, fogo e personalidade. Projeto demonstrativo de hamburgueria artesanal." />
+  <title>BRASA 91 — Fogo, ponto e personalidade.</title>
+
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1800&q=90" fetchpriority="high" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"><i id="scrollProgressBar"></i></div>
+  <canvas id="embers" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <a class="portfolio-back" href="../../index.html#clientes" aria-label="Voltar ao portfólio">← Vértice</a>
+  <div class="demo-note">PROJETO DEMONSTRATIVO</div>
+
+  <header class="site-header" id="header">
+    <a class="brand magnetic" href="#top" aria-label="BRASA 91 — início">
+      <span class="brand-mark"><i></i><b>B91</b></span>
+      <span class="brand-copy"><strong>BRASA 91</strong><small>SMASH & FIRE</small></span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <a href="#menu">Cardápio</a>
+      <a href="#experiencia">A experiência</a>
+      <a href="#combos">Monte o seu</a>
+      <a href="#sobre">A casa</a>
+    </nav>
+
+    <a class="nav-order magnetic" href="#pedido">PEDIR AGORA <span>↗</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Abrir menu">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <a href="#menu">CARDÁPIO <span>01</span></a>
+    <a href="#experiencia">A EXPERIÊNCIA <span>02</span></a>
+    <a href="#combos">MONTE O SEU <span>03</span></a>
+    <a href="#sobre">A CASA <span>04</span></a>
+    <a class="mobile-order" href="#pedido">PEDIR AGORA ↗</a>
+  </div>
+
+  <main id="conteudo">
+    <section class="hero" id="top">
+      <div class="hero-media parallax-media" data-speed="0.12" aria-hidden="true">
+        <img
+          src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1800&q=90"
+          srcset="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=88 900w, https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1400&q=90 1400w, https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=2200&q=92 2200w"
+          sizes="100vw"
+          alt=""
+          width="2200"
+          height="1467"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <div class="hero-vignette"></div>
+        <div class="steam-layer steam-1"></div>
+        <div class="steam-layer steam-2"></div>
+        <div class="heat-wave heat-1"></div>
+        <div class="heat-wave heat-2"></div>
+        <div class="hero-floating-card reveal delay-2" aria-hidden="true">
+          <div class="hero-floating-thumb">
+            <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=700&q=88" alt="" width="700" height="525" loading="lazy" decoding="async" />
+          </div>
+          <div class="hero-floating-copy">
+            <small>ASSINATURA DA CASA</small>
+            <b>CHEDDAR ESCORRENDO + CROSTA ABSURDA</b>
+            <span><i></i> feito na hora</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-fireline" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> SMASH • FOGO • SÃO PAULO</p>
+          <h1>
+            <span class="line">CARNE NO</span>
+            <span class="line outline">PONTO.</span>
+            <span class="line hot-text">ATITUDE</span>
+            <span class="line">NA BRASA.</span>
+          </h1>
+          <p class="hero-lead">Blend da casa, crosta de verdade, pão tostado e uma chapa que não negocia com a fome.</p>
+          <div class="hero-actions">
+            <a class="btn btn-fire magnetic" href="#menu"><span>VER CARDÁPIO</span><b>↘</b></a>
+            <a class="btn btn-ghost magnetic" href="#combos"><span>MONTAR MEU COMBO</span><b>+</b></a>
+          </div>
+          <div class="hero-snippets reveal delay-1" aria-label="Sabores em destaque">
+            <span>QUEIJO ESCORRENDO</span>
+            <span>BACON CROCANTE</span>
+            <span>MOLHO 91</span>
+          </div>
+        </div>
+
+        <div class="hero-side reveal delay-2">
+          <div class="live-badge"><i></i> CHAPA QUENTE AGORA</div>
+          <div class="hero-stat"><strong>180º</strong><span>de crosta,<br>sem conversa.</span></div>
+          <div class="hero-stat"><strong>4</strong><span>blends<br>autorais.</span></div>
+          <div class="hero-stat"><strong>7</strong><span>molhos feitos<br>na casa.</span></div>
+        </div>
+      </div>
+
+      <div class="scroll-cue" aria-hidden="true"><span>SCROLL</span><i></i></div>
+    </section>
+
+    <section class="ticker" aria-label="Destaques do cardápio">
+      <div class="ticker-track">
+        <span>SMASH</span><b>✦</b><span>CHEDDAR</span><b>✦</b><span>BACON</span><b>✦</b><span>JALAPEÑO</span><b>✦</b><span>MOLHO 91</span><b>✦</b><span>BRASA 91</span><b>✦</b>
+        <span>SMASH</span><b>✦</b><span>CHEDDAR</span><b>✦</b><span>BACON</span><b>✦</b><span>JALAPEÑO</span><b>✦</b><span>MOLHO 91</span><b>✦</b><span>BRASA 91</span><b>✦</b>
+      </div>
+    </section>
+
+    <section class="menu-section section-pad" id="menu">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow"><span></span> 01 / MAIS PEDIDOS</p>
+          <h2>ESCOLHA O<br><em>SEU PROBLEMA.</em></h2>
+        </div>
+        <div class="section-intro">
+          <p>Receitas curtas, ingredientes que aparecem e o tipo de burger que chega na mesa sem precisar de legenda.</p>
+          <div class="menu-tabs" role="tablist" aria-label="Filtrar cardápio">
+            <button class="active" data-cat="todos" role="tab" aria-selected="true">TODOS</button>
+            <button data-cat="classicos" role="tab" aria-selected="false">CLÁSSICOS</button>
+            <button data-cat="picantes" role="tab" aria-selected="false">PICANTES</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="burger-grid">
+        <article class="food-card tilt reveal" data-cat="classicos">
+          <div class="food-photo">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1200&q=90" alt="Hambúrguer artesanal com queijo e salada" width="1200" height="900" loading="lazy" decoding="async" />
+            <span class="food-number">01</span>
+            <span class="food-tag">BEST SELLER</span>
+          </div>
+          <div class="food-copy">
+            <div><p>DOUBLE SMASH</p><h3>91 SMASH</h3></div>
+            <span class="price">R$ 34</span>
+          </div>
+          <p class="food-description">Duplo smash, cheddar, picles, cebola tostada e molho 91.</p>
+          <button class="add-to-combo" data-select-base="91 Smash" aria-label="Escolher 91 Smash no combo">QUERO ESSE <span>+</span></button>
+        </article>
+
+        <article class="food-card tilt reveal delay-1" data-cat="picantes">
+          <div class="food-photo">
+            <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=1200&q=90" alt="Hambúrguer artesanal com queijo derretido" width="1200" height="900" loading="lazy" decoding="async" />
+            <span class="food-number">02</span>
+            <span class="food-tag spicy">HOT</span>
+          </div>
+          <div class="food-copy">
+            <div><p>160G • DEFUMADO</p><h3>FUMAÇA</h3></div>
+            <span class="price">R$ 39</span>
+          </div>
+          <p class="food-description">Blend 160g, queijo prato, bacon, jalapeño e barbecue defumado.</p>
+          <button class="add-to-combo" data-select-base="Fumaça" aria-label="Escolher Fumaça no combo">QUERO ESSE <span>+</span></button>
+        </article>
+
+        <article class="food-card tilt reveal delay-2" data-cat="classicos">
+          <div class="food-photo">
+            <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=1200&q=90" alt="Hambúrguer artesanal com bacon e queijo" width="1200" height="900" loading="lazy" decoding="async" />
+            <span class="food-number">03</span>
+            <span class="food-tag">BACON</span>
+          </div>
+          <div class="food-copy">
+            <div><p>DOUBLE • BACON</p><h3>BRASA BACON</h3></div>
+            <span class="price">R$ 37</span>
+          </div>
+          <p class="food-description">Duplo smash, queijo americano, bacon crocante e maionese de páprica.</p>
+          <button class="add-to-combo" data-select-base="Brasa Bacon" aria-label="Escolher Brasa Bacon no combo">QUERO ESSE <span>+</span></button>
+        </article>
+      </div>
+    </section>
+
+    <section class="signature section-pad" aria-label="Destaque da casa">
+      <div class="signature-media reveal">
+        <div class="signature-glow"></div>
+        <img src="https://images.unsplash.com/photo-1520072959219-c595dc870360?auto=format&fit=crop&w=1800&q=92" alt="Close-up de hambúrguer artesanal com queijo e bacon" width="1800" height="1200" loading="lazy" decoding="async" />
+        <div class="signature-badge">WOW BURGER</div>
+      </div>
+      <div class="signature-copy reveal delay-1">
+        <p class="eyebrow"><span></span> 02 / EFEITO ÁGUA NA BOCA</p>
+        <h2>O TIPO DE<br><em>BURGER</em><br>QUE SILENCIA<br>A MESA.</h2>
+        <p class="signature-lead">Camadas que brilham, cheddar quente, bacon crocante, pão tostado e aquele visual de burger que já vende antes da primeira mordida.</p>
+        <div class="signature-points">
+          <article class="spotlight-card"><small>TEXTURA</small><b>CROSTA SELADA</b><span>carne prensada na hora para entregar cor, contraste e suculência.</span></article>
+          <article class="spotlight-card"><small>IMPACTO</small><b>QUEIJO EM QUEDA</b><span>visual intenso, brilho quente e sensação de burger recém-montado.</span></article>
+          <article class="spotlight-card"><small>FINAL</small><b>FUMAÇA + BRASA</b><span>uma presença visual que fica na memória e faz o cliente lembrar da marca.</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience" id="experiencia">
+      <div class="experience-photo parallax-media" data-speed="0.08">
+        <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=2200&q=90" alt="Hambúrguer artesanal em fotografia gastronômica escura" width="2200" height="1467" loading="lazy" decoding="async" />
+      </div>
+      <div class="experience-overlay"></div>
+      <div class="experience-copy reveal">
+        <p class="eyebrow light"><span></span> 02 / O RITUAL</p>
+        <h2>O SOM DA<br>CHAPA É O<br><em>NOSSO TIMER.</em></h2>
+        <p>Sem atalhos: carne prensada na hora, queijo encontrando a crosta e pão tostado segundos antes de fechar o pedido.</p>
+      </div>
+      <div class="ritual-steps" aria-label="Etapas do preparo">
+        <div class="ritual reveal"><span>01</span><b>PRENSA</b><small>contato total com a chapa</small></div>
+        <div class="ritual reveal delay-1"><span>02</span><b>CROSTA</b><small>textura antes de qualquer molho</small></div>
+        <div class="ritual reveal delay-2"><span>03</span><b>FOGO</b><small>calor alto, execução rápida</small></div>
+      </div>
+    </section>
+
+    <section class="builder section-pad" id="combos">
+      <div class="builder-copy reveal">
+        <p class="eyebrow"><span></span> 03 / MONTE O SEU</p>
+        <h2>VOCÊ MANDA.<br><em>A CHAPA RESOLVE.</em></h2>
+        <p class="builder-intro">Monte o combo em poucos toques. Esta é uma demonstração interativa; o pedido final segue pelo atendimento.</p>
+
+        <div class="builder-step">
+          <div class="step-title"><span>1</span><div><small>COMEÇA PELO</small><b>BURGER</b></div></div>
+          <div class="choice-grid">
+            <button class="pick active" data-group="base" data-price="34" data-name="91 Smash" data-image="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1000&q=88"><strong>91 Smash</strong><span>R$ 34</span></button>
+            <button class="pick" data-group="base" data-price="39" data-name="Fumaça" data-image="https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=1000&q=88"><strong>Fumaça</strong><span>R$ 39</span></button>
+            <button class="pick" data-group="base" data-price="37" data-name="Brasa Bacon" data-image="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=1000&q=88"><strong>Brasa Bacon</strong><span>R$ 37</span></button>
+          </div>
+        </div>
+
+        <div class="builder-step">
+          <div class="step-title"><span>2</span><div><small>AGORA O</small><b>EXTRA</b></div></div>
+          <div class="choice-grid extras">
+            <button class="pick active" data-group="extra" data-price="0" data-name="Sem extra"><strong>Sem extra</strong><span>+ R$ 0</span></button>
+            <button class="pick" data-group="extra" data-price="8" data-name="Bacon + cheddar"><strong>Bacon + cheddar</strong><span>+ R$ 8</span></button>
+            <button class="pick" data-group="extra" data-price="6" data-name="Jalapeño + molho 91"><strong>Jalapeño + molho 91</strong><span>+ R$ 6</span></button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="order-card reveal delay-1" aria-live="polite">
+        <div class="receipt-top"><span>BRASA 91 / PEDIDO</span><b>#0091</b></div>
+        <div class="combo-photo">
+          <img id="comboImage" src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1000&q=88" alt="Burger escolhido no combo" width="1000" height="750" loading="lazy" decoding="async" />
+          <span>COMBO</span>
+        </div>
+        <div class="combo-title"><small>SEU PEDIDO</small><h3 id="comboName">91 Smash</h3></div>
+        <ul>
+          <li><span id="baseLine">91 Smash</span><b>1x</b></li>
+          <li><span id="extraLine">Sem extra</span><b>+</b></li>
+          <li><span>Batata pequena + bebida</span><b>+</b></li>
+        </ul>
+        <div class="total"><span><small>TOTAL ESTIMADO</small>pronto para ir?</span><b id="comboTotal">R$ 46</b></div>
+        <a href="#pedido" class="receipt-cta magnetic">FECHAR PEDIDO <span>↗</span></a>
+        <p>Valores e itens deste projeto são ilustrativos.</p>
+      </aside>
+    </section>
+
+    <section class="quality section-pad">
+      <div class="quality-head reveal">
+        <p class="eyebrow"><span></span> 04 / SEM ENROLAÇÃO</p>
+        <h2>POUCOS<br>INGREDIENTES.<br><em>MUITA INTENÇÃO.</em></h2>
+      </div>
+      <div class="quality-list">
+        <article class="reveal"><span>01</span><div><h3>BLEND DA CASA</h3><p>Carne como protagonista. Ponto, crosta e suculência vêm antes do resto.</p></div><b>160G</b></article>
+        <article class="reveal"><span>02</span><div><h3>PÃO TOSTADO</h3><p>Vai para a chapa antes de receber o burger para segurar textura até a última mordida.</p></div><b>HOT</b></article>
+        <article class="reveal"><span>03</span><div><h3>MOLHOS 91</h3><p>Receitas feitas para completar o conjunto — não para esconder o sabor da carne.</p></div><b>07</b></article>
+      </div>
+    </section>
+
+    <section class="gallery" aria-label="Galeria BRASA 91">
+      <figure class="gallery-large reveal">
+        <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=1800&q=90" alt="Cheeseburger artesanal em fundo escuro" width="1800" height="1200" loading="lazy" decoding="async" />
+        <figcaption><span>BRASA / 91</span><b>FOME NÃO ESPERA.</b></figcaption>
+      </figure>
+      <figure class="gallery-small reveal delay-1">
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1400&q=90" alt="Burger artesanal com bacon" width="1400" height="1000" loading="lazy" decoding="async" />
+        <figcaption>SMASH / FIRE / REPEAT</figcaption>
+      </figure>
+      <div class="gallery-quote reveal delay-2">
+        <span>91</span>
+        <p>“Se precisa explicar demais, faltou fogo.”</p>
+        <small>MANIFESTO BRASA</small>
+      </div>
+    </section>
+
+    <section class="story section-pad" id="sobre">
+      <div class="story-copy reveal">
+        <p class="eyebrow"><span></span> 05 / A CASA</p>
+        <h2>ÀS 18H<br>A CHAMA<br><em>ACENDE.</em></h2>
+      </div>
+      <div class="story-body reveal delay-1">
+        <p class="story-lead">A BRASA 91 nasceu da ideia de fazer poucos burgers — e fazer cada um direito.</p>
+        <p>Cozinha aberta, som alto na medida, ingredientes selecionados todos os dias e uma identidade que mistura chapa, rua e precisão.</p>
+        <div class="hours">
+          <div><small>ABERTURA</small><b>18H</b></div>
+          <div><small>ÚLTIMO PEDIDO</small><b>23H30</b></div>
+          <div><small>FUNCIONAMENTO</small><b>TER—DOM</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews section-pad">
+      <div class="section-heading compact reveal">
+        <div><p class="eyebrow"><span></span> 06 / QUEM PROVA</p><h2>VOLTA.<br><em>E TRAZ GENTE.</em></h2></div>
+        <p class="reviews-note">Avaliações abaixo são composições visuais deste projeto demonstrativo.</p>
+      </div>
+      <div class="review-grid">
+        <article class="review-card reveal"><div class="stars">★★★★★</div><p>“Pão perfeito, carne com crosta e o Fumaça tem picância na medida.”</p><footer><span>GM</span><div><b>GABRIEL M.</b><small>avaliação ilustrativa</small></div></footer></article>
+        <article class="review-card featured reveal delay-1"><div class="quote-mark">“</div><div class="stars">★★★★★</div><p>“O tipo de burger que você termina e já começa a negociar consigo mesmo se cabe outro.”</p><footer><span>LF</span><div><b>LUANA F.</b><small>avaliação ilustrativa</small></div></footer></article>
+        <article class="review-card reveal delay-2"><div class="stars">★★★★★</div><p>“Finalmente uma hamburgueria com identidade que não parece cópia.”</p><footer><span>RC</span><div><b>RAFAEL C.</b><small>avaliação ilustrativa</small></div></footer></article>
+      </div>
+    </section>
+
+    <section class="contact" id="pedido">
+      <div class="contact-bg" aria-hidden="true"></div>
+      <div class="contact-content reveal">
+        <p class="eyebrow dark"><span></span> 07 / FOME RESOLVIDA</p>
+        <h2>SEU PRÓXIMO<br>BURGER COMEÇA<br><em>AQUI.</em></h2>
+        <p>Retirada ou entrega conforme disponibilidade da unidade.</p>
+      </div>
+      <div class="contact-panel reveal delay-1">
+        <div><small>WHATSAPP</small><b>(XX) XXXXX-XXXX</b></div>
+        <a class="contact-cta magnetic" href="#" aria-label="Pedido demonstrativo pelo WhatsApp">PEDIR AGORA <span>↗</span></a>
+        <div class="contact-meta"><span>RUA DEMONSTRATIVA, 91<br>SÃO PAULO — SP</span><span>TER—DOM<br>18H—23H30</span></div>
+        <small class="demo-disclaimer">Canal e endereço fictícios para demonstração visual.</small>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand"><span class="brand-mark small"><i></i><b>B91</b></span><div><b>BRASA 91</b><small>FOGO, PONTO E PERSONALIDADE.</small></div></div>
+    <div class="footer-links"><a href="#menu">CARDÁPIO</a><a href="#combos">COMBO</a><a href="#sobre">A CASA</a><a href="#top">TOPO ↑</a></div>
+    <div class="footer-note"><span>PROJETO DEMONSTRATIVO</span><small>Projeto conceito criado para o portfólio Vértice Web.</small></div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
