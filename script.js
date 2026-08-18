@@ -794,28 +794,69 @@
   const shell = document.getElementById('sparkAppShell');
   if (!frame || !shell) return;
 
-  let bootTimer = 0;
-  const showBoot = () => {
-    if (!boot) return;
-    clearTimeout(bootTimer);
-    boot.classList.remove('is-hidden');
+  const SPARK_ORIGIN = 'https://wesafe-c7kg.onrender.com';
+  const SPARK_EMBED = `${SPARK_ORIGIN}/embed`;
+  const SPARK_HEALTH = `${SPARK_ORIGIN}/healthz`;
+  const bootTitle = boot?.querySelector('strong');
+  const bootCopy = boot?.querySelector(':scope > span');
+  let readyTimer = 0;
+
+  const showBoot = (title = 'Conectando ao Spark', copy = 'Verificando o servidor antes de abrir o sistema…') => {
+    clearTimeout(readyTimer);
+    boot?.classList.remove('is-hidden');
+    if (bootTitle) bootTitle.textContent = title;
+    if (bootCopy) bootCopy.textContent = copy;
   };
   const hideBoot = () => {
-    if (!boot) return;
-    clearTimeout(bootTimer);
-    bootTimer = setTimeout(() => boot.classList.add('is-hidden'), 420);
+    clearTimeout(readyTimer);
+    readyTimer = setTimeout(() => boot?.classList.add('is-hidden'), 260);
   };
 
-  frame.addEventListener('load', hideBoot);
-  // Avoid leaving a permanent loading layer if the remote service is slow/asleep.
-  setTimeout(hideBoot, 9000);
+  const checkHealth = async () => {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 9000);
+    try {
+      const response = await fetch(`${SPARK_HEALTH}?t=${Date.now()}`, {
+        mode: 'cors',
+        cache: 'no-store',
+        credentials: 'omit',
+        signal: controller.signal
+      });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return true;
+    } catch (error) {
+      showBoot('Spark indisponível no servidor', `O Render não respondeu corretamente (${error?.message || 'falha de conexão'}). Tente Recarregar quando o serviço estiver online.`);
+      return false;
+    } finally {
+      clearTimeout(timer);
+    }
+  };
+
+  const loadSpark = async () => {
+    showBoot();
+    const healthy = await checkHealth();
+    if (!healthy) return;
+    frame.src = `${SPARK_EMBED}?v=${Date.now()}`;
+    readyTimer = setTimeout(() => {
+      if (!boot?.classList.contains('is-hidden')) {
+        showBoot('Spark demorou para responder', 'O servidor está online, mas a interface ainda não confirmou o carregamento. Use Recarregar ou Abrir fora.');
+      }
+    }, 15000);
+  };
+
+  addEventListener('message', (event) => {
+    if (event.origin !== SPARK_ORIGIN) return;
+    if (event.data?.type === 'wesafe:ready' || event.data?.type === 'wesafe:frame-test') hideBoot();
+  });
+
+  // Fallback: if the remote document loads but an older backend does not send postMessage.
+  frame.addEventListener('load', () => {
+    if (frame.src && frame.src !== 'about:blank') setTimeout(hideBoot, 1400);
+  });
 
   reload?.addEventListener('click', () => {
-    showBoot();
-    const src = frame.getAttribute('src');
-    frame.setAttribute('src', 'about:blank');
-    requestAnimationFrame(() => requestAnimationFrame(() => frame.setAttribute('src', src || 'https://wesafe-c7kg.onrender.com')));
-    setTimeout(hideBoot, 9000);
+    frame.src = 'about:blank';
+    requestAnimationFrame(() => requestAnimationFrame(loadSpark));
   });
 
   fullscreen?.addEventListener('click', async () => {
@@ -823,7 +864,9 @@
       if (!document.fullscreenElement) await shell.requestFullscreen?.();
       else await document.exitFullscreen?.();
     } catch (_) {
-      window.open('https://wesafe-c7kg.onrender.com', '_blank', 'noopener');
+      window.open(SPARK_ORIGIN, '_blank', 'noopener');
     }
   });
+
+  loadSpark();
 })();
