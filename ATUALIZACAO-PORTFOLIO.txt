@@ -1,0 +1,11 @@
+VÉRTICE WEB — atualização do portfólio
+
+Alterações desta versão:
+- Cobalto removido da página e da pasta /projetos.
+- Torque 12 removido da página e da pasta /projetos.
+- BRASA 91 deixou de ocupar duas colunas e agora é um card normal da grade.
+- Grade principal: 2 cards por linha no desktop e 1 por linha no mobile.
+- Spark / WeSafe adicionado como projeto separado.
+- Link do Spark / WeSafe: https://wesafe-c7kg.onrender.com
+- Âmbar Rua e Pingo Pet preservados.
+- Estilo, navegação e restante da página preservados.

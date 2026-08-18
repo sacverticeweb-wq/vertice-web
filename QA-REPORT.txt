@@ -1,0 +1,75 @@
+VÉRTICE WEB — QA V8 SCROLL / PROFESSIONAL POLISH
+Data: 2026-08-18
+Base: vertice-web-site(5).zip
+
+OBJETIVOS DESTA REVISÃO
+- Reforçar sensação de página viva durante o scroll.
+- Dar mais profundidade à navbar após sair do topo.
+- Remover integralmente o projeto de estética anteriormente presente.
+- Refinar linguagem visual e copy para uma presença mais institucional/profissional.
+- Reduzir peso e remover arquivos comprovadamente sem uso.
+
+IMPLEMENTADO
+- Scroll Presence com variáveis atualizadas via requestAnimationFrame.
+- Linhas de seção desenhadas conforme a rolagem.
+- Profundidade suave em headings, Lab, portfólio, galeria e contato.
+- Processo com progressão visual por etapa.
+- Live Viewers com deslocamento sutil controlado pelo scroll em desktop.
+- Indicador editorial lateral de seção em telas grandes.
+- Navbar pós-scroll: blur, borda, compactação e sombra reforçada.
+- Reveals alternados esquerda/direita com blur reduzido para evitar sensação de foco perdido.
+- Hover genérico de elevação reduzido em favor de resposta material/óptica.
+- Portfólio ajustado para 5 projetos.
+- Copy principal refinada.
+
+OTIMIZAÇÃO
+- Estrutura descompactada antes: aproximadamente 53 MB.
+- Estrutura final descompactada: aproximadamente 1,7 MB.
+- Removida uma versão antiga completa que estava aninhada dentro do próprio pacote.
+- Removidos arquivos duplicados da Cobalto.
+- Removidos assets/cases duplicados não referenciados.
+- Removida mídia pesada da Torque 12 que não possuía nenhuma referência em HTML/CSS/JS.
+- Live Viewers continuam com carregamento sob demanda.
+
+VALIDAÇÃO ESTÁTICA
+- 7 arquivos HTML.
+- 7 arquivos CSS.
+- 7 arquivos JavaScript.
+- 0 referências locais quebradas.
+- 0 âncoras internas quebradas.
+- 0 erros de parsing CSS (tinycss2).
+- 0 erros de sintaxe JavaScript (node --check).
+- 0 referências ao projeto removido no código/runtime.
+
+VALIDAÇÃO DE INTERFACE EM CHROMIUM HEADLESS
+1440×1000:
+- overflow horizontal: 0
+- projetos: 5
+- erros JS: 0
+- loader: OK / pointer-events none após saída
+- navbar scrolled: 62 px / sombra reforçada
+
+1024×900:
+- overflow horizontal: 0
+- projetos: 5
+- erros JS: 0
+- loader: OK
+- menu responsivo: OK
+
+390×844:
+- overflow horizontal: 0
+- projetos: 5
+- erros JS: 0
+- loader: OK
+- menu mobile abre/fecha e limpa estado: OK
+- navbar scrolled: 60 px
+
+320×720:
+- overflow horizontal: 0
+- projetos: 5
+- erros JS: 0
+- loader: OK
+- menu mobile: OK
+
+OBSERVAÇÃO
+A validação de interface foi executada sobre o DOM/CSS/JS local em Chromium headless. Links e assets locais também foram validados separadamente por caminho para garantir que o pacote final não dependa de arquivos removidos.

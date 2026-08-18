@@ -660,3 +660,21 @@ body{background:linear-gradient(180deg,#f8f9fb 0%,#f5f6f8 46%,#f8f9fb 100%)}
 @media(prefers-reduced-motion:reduce){
   .page-atmosphere,.scroll-rail,.section-trace{display:none!important}.scroll-live-section .section-index,.intro-grid,.lab-heading,.conversion-head,.client-work-heading,.section-heading,.faq-heading,.lab-stage,.portfolio .gallery-shell,.contact .contact-inner,.project-card .project-live{transform:none!important}.reveal{filter:none!important}
 }
+
+
+/* Spark / WeSafe — only the portfolio preview; preserves the existing card system. */
+.spark-project-preview{background:#07111e}
+.spark-head-link{justify-self:end;width:29px;height:29px;border-radius:8px;border:1px solid rgba(255,255,255,.1);display:grid;place-items:center;color:#7caeff;background:#0a1420;font-size:13px;transition:border-color .25s,background .25s,color .25s}
+.spark-head-link:hover{border-color:rgba(69,139,255,.55);background:#10213a;color:#fff}
+.spark-stage{background:radial-gradient(circle at 58% 36%,rgba(26,108,255,.24),transparent 28%),linear-gradient(145deg,#07111e,#0b1725 52%,#07101a);overflow:hidden}
+.spark-stage:after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,transparent 49.8%,rgba(77,143,255,.08) 50%,transparent 50.2%),linear-gradient(0deg,transparent 49.8%,rgba(77,143,255,.06) 50%,transparent 50.2%);background-size:70px 70px;pointer-events:none}
+.spark-map-grid{position:absolute;z-index:1;inset:-30%;opacity:.38;background-image:linear-gradient(31deg,transparent 48%,rgba(73,119,177,.19) 49%,rgba(73,119,177,.19) 50%,transparent 51%),linear-gradient(-27deg,transparent 48%,rgba(73,119,177,.13) 49%,rgba(73,119,177,.13) 50%,transparent 51%);background-size:118px 82px;transform:rotate(-7deg)}
+.spark-route{position:absolute;z-index:2;height:4px;border-radius:99px;background:linear-gradient(90deg,transparent,#1d77ff 18%,#65aaff 70%,transparent);box-shadow:0 0 20px rgba(41,124,255,.5);transform-origin:left center}
+.spark-route:after{content:"";position:absolute;right:14%;top:50%;width:9px;height:9px;border-radius:50%;background:#8bc0ff;transform:translateY(-50%);box-shadow:0 0 0 5px rgba(70,143,255,.13),0 0 25px rgba(77,151,255,.8)}
+.route-a{width:68%;left:3%;top:65%;transform:rotate(-18deg)}.route-b{width:52%;left:44%;top:46%;transform:rotate(24deg);opacity:.62}
+.spark-preview-ui{position:absolute;z-index:4;inset:0;padding:56px 34px 30px;display:flex;flex-direction:column;color:#f6f9ff}
+.spark-preview-brand{display:flex;align-items:baseline;gap:8px}.spark-preview-brand span{font-size:12px;font-weight:950;letter-spacing:.18em}.spark-preview-brand small{color:#4d91ff;font-size:7px;font-weight:900;letter-spacing:.15em}
+.spark-preview-copy{margin:auto 0;max-width:76%}.spark-preview-copy>small{font-size:7px;color:#72a9ff;font-weight:900;letter-spacing:.15em}.spark-preview-copy strong{display:block;font-size:clamp(30px,3.2vw,48px);line-height:.93;letter-spacing:-.055em;margin:9px 0 12px}.spark-preview-copy strong em{font-style:normal;color:#4b91ff}.spark-preview-copy p{max-width:420px;margin:0;color:#8fa2ba;font-size:9px;line-height:1.55}
+.spark-preview-stats{display:flex;gap:7px;margin-top:auto}.spark-preview-stats span{border:1px solid rgba(117,164,226,.16);background:rgba(9,20,34,.7);backdrop-filter:blur(9px);padding:7px 9px;border-radius:999px;color:#7d8fa8;font-size:7px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}.spark-preview-stats b{color:#4d91ff;margin-right:4px}
+.spark-real-badge i{background:#4d91ff;box-shadow:0 0 0 4px rgba(77,145,255,.12),0 0 15px rgba(77,145,255,.6)}
+@media(max-width:720px){.spark-preview-ui{padding:50px 22px 22px}.spark-preview-copy{max-width:88%}.spark-preview-copy strong{font-size:35px}.spark-preview-stats span{font-size:6px;padding:6px 7px}}
